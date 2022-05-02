@@ -1,4 +1,3 @@
-from astropy.utils.data import get_pkg_data_filename
 from astropy.io import fits
 import matplotlib.pyplot as plt
 import streamlit as st
