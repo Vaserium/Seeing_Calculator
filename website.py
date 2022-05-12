@@ -6,7 +6,7 @@ from datetime import date
 
 st.set_page_config(layout="wide", page_title='York Seeing')
 row0_1, row0_spacer2, row0_2, row0_spacer3 = st.columns((3, .2, 0.55, .1))
-row0_1.title('York Observatory Seeing Network')
+row0_1.header('York Observatory Seeing Network')
 with row0_2:
     st.write('')
 # ------------------------------------------------- Displaying all data (just for show and will not actually use data from this)
@@ -15,7 +15,7 @@ excel_file = 'sample.csv'
 st.markdown("""
 <style>
 .big-font {
-    font-size:100px !important;
+    font-size:65px !important;
 }
 </style>
 """, unsafe_allow_html=True)
