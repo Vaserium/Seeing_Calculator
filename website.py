@@ -32,8 +32,8 @@ st.markdown(fwhm_display, unsafe_allow_html=True)
 st.markdown(date_display, unsafe_allow_html=True)
 
 column1, column2 = st.columns((1.5, 1))
-image = Image.open('Bortle_Class.png')
-column1.image(image, caption='Credit: OPT Telescopes', use_column_width=True)
+image = Image.open('pickering.png')
+column1.image(image, caption='Credit: Damian Peach', use_column_width=True)
 
 
 
