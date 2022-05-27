@@ -33,7 +33,7 @@ st.markdown(date_display, unsafe_allow_html=True)
 
 column1, column2 = st.columns((1.5, 1))
 image = Image.open('pickering.png')
-column1.image(image, caption='Credit: Damian Peach', use_column_width=True)
+st.image(image, width=1920, caption='Credit: Damian Peach', use_column_width=True)
 
 
 
