@@ -1,3 +1,4 @@
+from PIL import Image
 from astropy.io import fits
 import matplotlib.pyplot as plt
 import streamlit as st
@@ -29,3 +30,14 @@ date_display = '<p class="big-font">Date: ' + dataToDisplay['Date'][2]
 
 st.markdown(fwhm_display, unsafe_allow_html=True)
 st.markdown(date_display, unsafe_allow_html=True)
+
+column1, column2 = st.columns((1.5, 1))
+image = Image.open('Bortle_Class.png')
+column1.image(image, caption='Credit: OPT Telescopes', use_column_width=True)
+
+
+
+
+
+
+
