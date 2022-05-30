@@ -44,7 +44,7 @@ st.altair_chart(c, use_container_width=True)
 
 column1, column2 = st.columns((1.5, 1))
 image = Image.open('pickering.png')
-st.image(image, caption='Credit: Damian Peach', width=820)
+st.image(image, caption='Credit: Damian Peach', width=520)
 
 
 
