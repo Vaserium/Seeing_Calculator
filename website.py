@@ -1,7 +1,5 @@
 import altair as alt
 from PIL import Image
-from astropy.io import fits
-import matplotlib.pyplot as plt
 import streamlit as st
 import pandas as pd
 from datetime import date
@@ -29,7 +27,7 @@ seeing = str(round(data['FWHM'][2], 3))
 row3_1, row3_spacer2 = st.columns((3.2, .1))
 with row3_1:
     st.markdown(
-        "'Why do you want to measure the seeing value?' you might ask. Well, this interactive application containing FWHM(Full Width Half Maximum) data allows you to look at measured seeing conditions so you can stay informed on the night each observation was taken!")
+        "'Why do you want to measure the seeing value?' Well, this interactive application containing FWHM(Full Width Half Maximum) data allows you to look at measured seeing conditions so you can stay informed on the night each observation was taken!")
     st.markdown("Seeing: “Good seeing” is when the stars that are being displayed on your image twinkle very little; “bad seeing” is when they twinkle a lot. Check the diagram below...")
     st.markdown(
         "You can find the source code in the [York Observatory Seeing Network GitHub Repository](https://github.com/Vaserium/Seeing_Calculator/blob/main/website.py)")
