@@ -23,6 +23,7 @@ d1 = today.strftime("%d/%m/%Y")
 data = pd.read_csv(excel_file)
 dataToDisplay = pd.DataFrame(data)
 
+seeing = str(round(data['FWHM'][2], 3))
 row3_1, row3_spacer2 = st.columns((3.2, .1))
 with row3_1:
     st.markdown(
@@ -34,7 +35,7 @@ with row3_1:
 st.write(data)
 
 a = alt.Chart(dataToDisplay).mark_area(opacity=1).encode(
-    x='Date', y='Pickering Scale')
+    x='Date', y='FWHM')
 
 c = alt.layer(a)
 
