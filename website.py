@@ -8,14 +8,6 @@ st.header('York Observatory Seeing Network')
 # ------------------------------------------------- Displaying all data (just for show and will not actually use data from this)
 excel_file = 'sample.csv'
 
-st.markdown("""
-<style>
-.big-font {
-    font-size:65px !important;
-}
-</style>
-""", unsafe_allow_html=True)
-
 data = pd.read_csv(excel_file)
 dataToDisplay = pd.DataFrame(data)
 
@@ -26,8 +18,6 @@ with row3_1:
     st.markdown("Seeing: “Good seeing” is when the stars that are being displayed on your image twinkle very little; “bad seeing” is when they twinkle a lot. Check the diagram below...")
     st.markdown("Pickering Scale: A scale from 1 to 10 which represents seeing conditions.  A rating of 1 is very poor seeing, and a rating of 10 is perfect seeing.")
     st.markdown("How to check seeing conditions: https://www.skyatnightmagazine.com/advice/what-is-astronomical-seeing/")
-    st.markdown(
-        "You can find the source code in the [York Observatory Seeing Network GitHub Repository](https://github.com/Vaserium/Seeing_Calculator/blob/main/website.py)")
 
 st.write(data)
 
