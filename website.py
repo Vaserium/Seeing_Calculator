@@ -2,7 +2,6 @@ import altair as alt
 from PIL import Image
 import streamlit as st
 import pandas as pd
-from datetime import date
 
 st.set_page_config(layout="wide", page_title='York Seeing')
 st.header('York Observatory Seeing Network')
@@ -17,9 +16,6 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-today = date.today()
-d1 = today.strftime("%d/%m/%Y")
-
 data = pd.read_csv(excel_file)
 dataToDisplay = pd.DataFrame(data)
 
@@ -28,6 +24,8 @@ with row3_1:
     st.markdown(
         "'Why do you want to measure the seeing value?' Well, this interactive application containing FWHM(Full Width Half Maximum) data allows you to look at measured seeing conditions so you can stay informed on the night each observation was taken!")
     st.markdown("Seeing: “Good seeing” is when the stars that are being displayed on your image twinkle very little; “bad seeing” is when they twinkle a lot. Check the diagram below...")
+    st.markdown("Pickering Scale: A scale from 1 to 10 which represents seeing conditions.  A rating of 1 is very poor seeing, and a rating of 10 is perfect seeing.")
+    st.markdown("How to check seeing conditions: https://www.skyatnightmagazine.com/advice/what-is-astronomical-seeing/")
     st.markdown(
         "You can find the source code in the [York Observatory Seeing Network GitHub Repository](https://github.com/Vaserium/Seeing_Calculator/blob/main/website.py)")
 
