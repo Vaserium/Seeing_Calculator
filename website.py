@@ -32,26 +32,29 @@ with row3_1:
         "Here are some handy definitions for seeing: “Good seeing” is when the stars that are being displayed on your image twinkle very little; “bad seeing” is when they twinkle a lot. "
         "Check the diagram below to see what this might look like in the Pickerings scale.")
 
-column1, column2 = st.columns((1.5, 1))
 image = Image.open('pickering.png')
 st.image(image, caption='Credit: Damian Peach (http://www.damianpeach.com/pickering.htm)', width=620)
 
 st.subheader("Project Data")
-st.markdown("For my project I measured the FWHM of stars in an image field from [you include description of object observed here]. "
-            "These data were taken at the Allan I Carswell Observatory 1m telescope. "
-            "All 2022 data I took with members of the observatory for this project and previous data was used from the archive. "
-            "Here is a picture of our star field for [you include description here]")
+st.markdown(
+    "For my project I measured the FWHM of stars in an image field from [you include description of object observed here]. "
+    "These data were taken at the Allan I Carswell Observatory 1m telescope. "
+    "All 2022 data I took with members of the observatory for this project and previous data was used from the archive. "
+    "Here is a picture of our star field for [you include description here]")
 
 st.markdown("ADD STAR IMAGE HERE")
 
-st.markdown("The question I wanted to answer with my project is what kind of seeing do we get at the Allan I Carswell observatory, "
-            "see below for the data table and a plot showing all my values. As a reminder, the conversion for the Pickering scale was done with [you include description here].")
+st.markdown(
+    "The question I wanted to answer with my project is what kind of seeing do we get at the Allan I Carswell observatory, "
+    "see below for the data table and a plot showing all my values. As a reminder, the conversion for the Pickering scale was done with [you include description here].")
 
-st.write(data)
+g1, g2 = st.columns((1, 2.8))
+
+g1.write(data)
 
 a = alt.Chart(dataToDisplay).mark_area(opacity=1).encode(
     x='Date', y='Pickering Scale')
 
 c = alt.layer(a)
 
-st.altair_chart(c, use_container_width=True)
+g2.altair_chart(c, use_container_width=True)
