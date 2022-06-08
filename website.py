@@ -37,24 +37,27 @@ st.image(image, caption='Credit: Damian Peach (http://www.damianpeach.com/picker
 
 st.subheader("Project Data")
 st.markdown(
-    "For my project I measured the FWHM of stars in an image field from [you include description of object observed here]. "
+    "For my project I measured the FWHM of stars in an image field from Betelgeuse. "
     "These data were taken at the Allan I Carswell Observatory 1m telescope. "
     "All 2022 data I took with members of the observatory for this project and previous data was used from the archive. "
-    "Here is a picture of our star field for [you include description here]")
+    "Here is a picture of our star field for Betelgeuse.")
 
 st.markdown("ADD STAR IMAGE HERE")
 
 st.markdown(
     "The question I wanted to answer with my project is what kind of seeing do we get at the Allan I Carswell observatory, "
-    "see below for the data table and a plot showing all my values. As a reminder, the conversion for the Pickering scale was done with [you include description here].")
+    "see below for the data table and a plot showing all my values. As a reminder, the conversion for the Pickering scale was done with this diagram.")
 
-g1, g2 = st.columns((1, 2.8))
+image = Image.open('pickering2.png')
+st.image(image, caption='Credit: Kolář J (https://eaae-astronomy.org/images/projects/catch-a-star/2015/18_How_to_measure_seeing.pdf)', width=820)
 
-g1.write(data)
+# g1, g2 = st.columns((1, 2.8))
+
+st.write(data)
 
 a = alt.Chart(dataToDisplay).mark_area(opacity=1).encode(
     x='Date', y='Pickering Scale')
 
 c = alt.layer(a)
 
-g2.altair_chart(c, use_container_width=True)
+st.altair_chart(c, use_container_width=True)
