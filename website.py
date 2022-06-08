@@ -26,15 +26,13 @@ st.markdown(
         "How are seeing and FWHM related? I used the number of pixels across the width of the star at half its maximum value, ")
 st.write(latext)
 
-g1, g2 = st.columns((1, 1.3))
-image = Image.open('pickering.png')
-g1.image(image, caption='Credit: Damian Peach (http://www.damianpeach.com/pickering.htm)', width=520)
-
-g2.markdown(
+st.markdown(
         "For this investigation I used the Pickering scale which is [a scale from 1 to 10 which represents seeing conditions. A rating of 1 is very poor seeing, and a rating of 10 is perfect seeing](https://freestarcharts.com/pickering-scale#:~:text=Pickering%20scale%20The%20scale%20developed%20by%20Harvard%20astronomer,and%20a%20rating%20of%2010%20meaning%20perfect%20seeing.). "
         "Here are some handy definitions for seeing: “Good seeing” is when the stars that are being displayed on your image twinkle very little; “bad seeing” is when they twinkle a lot. "
         "Check the diagram below to see what this might look like in the Pickerings scale.")
 
+image = Image.open('pickering.png')
+st.image(image, caption='Credit: Damian Peach (http://www.damianpeach.com/pickering.htm)', width=620)
 
 st.subheader("Project Data")
 st.markdown(
