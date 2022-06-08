@@ -49,7 +49,7 @@ st.markdown(
     "see below for the data table and a plot showing all my values. As a reminder, the conversion for the Pickering scale was done with this diagram.")
 
 image = Image.open('pickering2.png')
-st.image(image, caption='Credit: Kolář J (https://eaae-astronomy.org/images/projects/catch-a-star/2015/18_How_to_measure_seeing.pdf)', width=820)
+st.image(image, caption='Credit: Kolář J (https://eaae-astronomy.org/images/projects/catch-a-star/2015/18_How_to_measure_seeing.pdf)', width=620)
 
 # g1, g2 = st.columns((1, 2.8))
 
