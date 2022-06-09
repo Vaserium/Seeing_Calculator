@@ -41,12 +41,12 @@ st.markdown(
     "All 2022 data I took with members of the observatory for this project and previous data was used from the archive. "
     "Here is a picture of our star field for Betelgeuse that contains a FWHM value of 3.66 and a Pickering Scale value of 3.")
 
-g1, g2 = st.columns((1, 0.5))
+g1, g2 = st.columns((1, 0.4))
 image = Image.open('Betelgeuse.png')
 g1.image(image, width=300)
 
-new_title1 = '<p style="font-family:Courier; color:Orange; font-size: 42px;">FWHM: 3.66</p>'
-new_title2 = '<p style="font-family:Courier; color:Orange; font-size: 42px;">Pickering: 3</p>'
+new_title1 = '<p style="font-family:Courier; color:Orange; font-size: 48px;">FWHM: 3.66</p>'
+new_title2 = '<p style="font-family:Courier; color:Orange; font-size: 48px;">Pickering: 3</p>'
 g2.markdown(new_title1, unsafe_allow_html=True)
 g2.markdown(new_title2, unsafe_allow_html=True)
 
