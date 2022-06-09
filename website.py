@@ -32,7 +32,7 @@ st.markdown(
         "Check the diagram below to see what this might look like in the Pickerings scale.")
 
 image = Image.open('pickering.png')
-st.image(image, caption='Credit: Damian Peach (http://www.damianpeach.com/pickering.htm)', width=450)
+st.image(image, caption='Credit: Damian Peach (http://www.damianpeach.com/pickering.htm)', width=620)
 
 st.subheader("Project Data")
 st.markdown(
@@ -42,7 +42,7 @@ st.markdown(
     "Here is a picture of our star field for Betelgeuse.")
 
 image = Image.open('Betelgeuse.png')
-st.image(image, width=620)
+st.image(image, width=450)
 
 st.markdown(
     "The question I wanted to answer with my project is what kind of seeing do we get at the Allan I Carswell observatory, "
