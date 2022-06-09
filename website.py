@@ -41,7 +41,8 @@ st.markdown(
     "All 2022 data I took with members of the observatory for this project and previous data was used from the archive. "
     "Here is a picture of our star field for Betelgeuse.")
 
-st.markdown("ADD STAR IMAGE HERE")
+image = Image.open('Betelgeuse.png')
+st.image(image, width=620)
 
 st.markdown(
     "The question I wanted to answer with my project is what kind of seeing do we get at the Allan I Carswell observatory, "
