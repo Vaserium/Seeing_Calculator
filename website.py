@@ -41,7 +41,7 @@ st.markdown(
     "All 2022 data I took with members of the observatory for this project and previous data was used from the archive. "
     "Here is a picture of our star field for Betelgeuse that contains a Pickering Scale value of 3 and a FWHM value of 3.66.")
 
-g1, g2 = st.columns((1, 1))
+g1, g2 = st.columns((1, 0.5))
 image = Image.open('Betelgeuse.png')
 g1.image(image, width=420)
 
