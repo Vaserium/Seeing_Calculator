@@ -32,7 +32,7 @@ st.markdown(
         "Check the diagram below to see what this might look like in the Pickerings scale.")
 
 image = Image.open('pickering.png')
-st.image(image, caption='Credit: Damian Peach (http://www.damianpeach.com/pickering.htm)', width=620)
+st.image(image, caption='Credit: Damian Peach (http://www.damianpeach.com/pickering.htm)', width=450)
 
 st.subheader("Project Data")
 st.markdown(
