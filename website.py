@@ -45,8 +45,10 @@ g1, g2 = st.columns((1, 0.5))
 image = Image.open('Betelgeuse.png')
 g1.image(image, width=300)
 
-g2.title("FWHM: 3.66")
-g2.title("Pickering: 3")
+new_title1 = '<p style="font-family:Courier; color:Orange; font-size: 42px;">FWHM: 3.66</p>'
+new_title2 = '<p style="font-family:Courier; color:Orange; font-size: 42px;">Pickering: 3</p>'
+g2.markdown(new_title1, unsafe_allow_html=True)
+g2.markdown(new_title2, unsafe_allow_html=True)
 
 st.markdown(
     "The question I wanted to answer with my project is what kind of seeing do we get at the Allan I Carswell observatory, "
