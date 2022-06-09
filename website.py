@@ -43,10 +43,10 @@ st.markdown(
 
 g1, g2 = st.columns((1, 0.73))
 image = Image.open('Betelgeuse.png')
-g1.image(image, width=350)
+g1.image(image, width=343)
 
 new_title1 = '<p style="font-family:Courier; color:Orange; font-size: 46px;">FWHM: 3.66</p>'
-new_title2 = '<p style="font-family:Courier; color:Orange; font-size: 46px;">Pickering: 3</p>'
+new_title2 = '<p style="font-family:Courier; color:Orange; font-size: 46px;">Pickering Scale: 3</p>'
 g2.markdown(new_title1, unsafe_allow_html=True)
 g2.markdown(new_title2, unsafe_allow_html=True)
 
