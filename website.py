@@ -39,10 +39,14 @@ st.markdown(
     "For my project I measured the FWHM of stars in an image field from Betelgeuse. "
     "These data were taken at the Allan I Carswell Observatory 1m telescope. "
     "All 2022 data I took with members of the observatory for this project and previous data was used from the archive. "
-    "Here is a picture of our star field for Betelgeuse.")
+    "Here is a picture of our star field for Betelgeuse that contains a Pickering Scale value of 3 and a FWHM value of 3.66.")
 
+g1, g2 = st.columns((1, 2.8))
 image = Image.open('Betelgeuse.png')
-st.image(image, width=450)
+g1.image(image, width=420)
+
+g2.header("FWHM: 3.66")
+g2.header("Pickering: 3")
 
 st.markdown(
     "The question I wanted to answer with my project is what kind of seeing do we get at the Allan I Carswell observatory, "
