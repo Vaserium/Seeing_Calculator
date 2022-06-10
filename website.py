@@ -13,7 +13,7 @@ $$
 halfMax = \frac{min(data) + max(data)}{2} \\
 FWHM = i_1 - i_2 + 1 \\
 $$
-    where i1 is where the data first drops below halfMax, i2 is where the data last rises above halfMax.  
+    where i1 is where the data first drops below halfMax, and i2 is where the data last rises above halfMax.  
 '''
 
 data = pd.read_csv(excel_file)
@@ -36,8 +36,8 @@ st.image(image, caption='Credit: Damian Peach (http://www.damianpeach.com/picker
 
 st.subheader("Project Data")
 st.markdown(
-    "For my project I measured the FWHM of stars in an image field from Betelgeuse. "
-    "These data were taken at the Allan I Carswell Observatory 1m telescope. "
+    "For my project I measured the FWHM of stars in image fields ranging from The North Star to the binary star system of Gamma Leonis. "
+    "These sets of data were taken at the Allan I Carswell Observatory 1m telescope. "
     "All 2022 data I took with members of the observatory for this project and previous data was used from the archive. "
     "Here is a picture of our star field for Betelgeuse that contains a FWHM value of 3.66 and a Pickering Scale value of 3.")
 
@@ -51,25 +51,31 @@ g2.markdown(new_title1, unsafe_allow_html=True)
 g2.markdown(new_title2, unsafe_allow_html=True)
 
 st.markdown(
-    "The question I wanted to answer with my project is what kind of seeing do we get at the Allan I Carswell observatory, "
-    "see below for the data table and a plot showing all my values. As a reminder, the conversion for the Pickering scale was done with this diagram.")
+    "The question I wanted to answer with my project is 'what kind of seeing do we get at the Allan I Carswell observatory?' "
+    "See below for the data table and a plot showing all my values. As a reminder, the conversion from the FWHM(arcsec) to the Pickering scale was done with this diagram.")
 
 image = Image.open('pickering2.png')
 st.image(image,
          caption='Credit: Kolář J (https://eaae-astronomy.org/images/projects/catch-a-star/2015/18_How_to_measure_seeing.pdf)',
          width=620)
 
+st.subheader("Allan I. Carswell Observatory Seeing and Pickering Scale Data")
+
 st.write(data)
 
-scatter  = alt.Chart(dataToDisplay).mark_point(filled=True).encode(
-        alt.X('Date'),
-        alt.Y('Pickering Scale'),
-        alt.Color('Pickering Scale'),
-        alt.Size('Pickering Scale'),
-        alt.OpacityValue(0.8)).interactive()
+scatter = alt.Chart(dataToDisplay).mark_point(filled=True).encode(
+    alt.X('Date'),
+    alt.Y('Pickering Scale'),
+    alt.Color('Pickering Scale'),
+    alt.Size('Pickering Scale'),
+    alt.OpacityValue(0.8)).interactive()
 
 scatter2 = alt.Chart(dataToDisplay).mark_point().encode(x='Date', y='Pickering Scale').interactive()
 
 c = alt.layer(scatter)
 
 st.altair_chart(c, use_container_width=True)
+
+st.subheader("Project Conclusions")
+st.markdown("Knowing the seeing conditions is important for further assisting in the practice of observing astronomical objects. Acknowledging these values can prove to be very influential since it will help you perform observing tasks efficiently and to operate well while capturing data because the seeing value tells you how much the atmospheric turbulence, twinkling of stars, and the form of wind affect the amount of “blurring” in the image. The seeing and pickering scale results seek to support the argument that it is meaningful to include seeing value information while observing.")
+
