@@ -4,7 +4,11 @@ import streamlit as st
 import pandas as pd
 
 st.set_page_config(layout="wide", page_title='York Seeing')
-st.header('York Observatory Seeing Network')
+row0_1, row0_spacer2, row0_2, row0_spacer3 = st.columns((3, .2, 0.95, .1))
+row0_1.header('York Observatory Seeing Network')
+with row0_2:
+    st.write('')
+row0_2.subheader('Web App by [Toby Avila](https://www.linkedin.com/in/toby-avila-118080208/)')
 # ------------------------------------------------- Displaying all data (just for show and will not actually use data from this)
 excel_file = 'sample.csv'
 
@@ -52,7 +56,7 @@ g2.markdown(new_title2, unsafe_allow_html=True)
 
 st.markdown(
     "The question I wanted to answer with my project is 'what kind of seeing do we get at the Allan I Carswell observatory?' "
-    "See below for the data table and a plot showing all my values. As a reminder, the conversion from the FWHM(arcsec) to the Pickering scale was done with this diagram.")
+    "See below for the data table and a plot showing all my values. As a reminder, the conversion from the FWHM(arcsec) to the Pickering scale was done using this diagram.")
 
 image = Image.open('pickering2.png')
 st.image(image,
@@ -77,5 +81,7 @@ c = alt.layer(scatter)
 st.altair_chart(c, use_container_width=True)
 
 st.subheader("Project Conclusions")
-st.markdown("Knowing the seeing conditions is important for further assisting in the practice of observing astronomical objects. Acknowledging these values can prove to be very influential since it will help you perform observing tasks efficiently and to operate well while capturing data because the seeing value tells you how much the atmospheric turbulence, twinkling of stars, and the form of wind affect the amount of “blurring” in the image. The seeing and pickering scale results seek to support the argument that it is meaningful to include seeing value information while observing.")
+st.markdown(
+    "Knowing the seeing conditions is important for further assisting astronomers in the practice of observing astronomical objects. Acknowledging these values can prove to be very influential since it will help you perform observing tasks efficiently and to operate well while capturing data because the seeing value tells you how much the atmospheric turbulence, twinkling of stars, and the form of wind affect the amount of “blurring” in the image. The seeing and pickering scale results seek to support the argument that it is meaningful to include seeing value information while observing.")
 
+st.title("Thank You So Much For Checking Out My Web App!")
