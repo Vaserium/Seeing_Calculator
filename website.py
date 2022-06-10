@@ -21,15 +21,15 @@ dataToDisplay = pd.DataFrame(data)
 
 st.subheader("Project Introduction")
 st.markdown(
-        "This website contains my 2022 co-op investigation into how seeing conditions affect day-to-day observations at Allan I. Carswell Astronomical Observatory. One of the measurements I was interested in was the seeing value. 'Why do you want to measure the seeing value?' Well, this interactive application containing FWHM(Full Width Half Maximum) data allows you to look at measured seeing conditions so you can stay informed on the night each observation was taken!")
+    "This website contains my 2022 co-op investigation into how seeing conditions affect day-to-day observations at Allan I. Carswell Astronomical Observatory. One of the measurements I was interested in was the seeing value. 'Why do you want to measure the seeing value?' Well, this interactive application containing FWHM(Full Width Half Maximum) data allows you to look at measured seeing conditions so you can stay informed on the night each observation was taken!")
 st.markdown(
-        "How are seeing and FWHM related? I used the number of pixels across the width of the star at half its maximum value, ")
+    "How are seeing and FWHM related? I used the number of pixels across the width of the star at half its maximum value, ")
 st.write(latext)
 
 st.markdown(
-        "For this investigation I used the Pickering scale which is [a scale from 1 to 10 which represents seeing conditions. A rating of 1 is very poor seeing, and a rating of 10 is perfect seeing](https://freestarcharts.com/pickering-scale#:~:text=Pickering%20scale%20The%20scale%20developed%20by%20Harvard%20astronomer,and%20a%20rating%20of%2010%20meaning%20perfect%20seeing.). "
-        "Here are some handy definitions for seeing: “Good seeing” is when the stars that are being displayed on your image twinkle very little; “bad seeing” is when they twinkle a lot. "
-        "Check the diagram below to see what this might look like in the Pickerings scale.")
+    "For this investigation I used the Pickering scale which is [a scale from 1 to 10 which represents seeing conditions. A rating of 1 is very poor seeing, and a rating of 10 is perfect seeing](https://freestarcharts.com/pickering-scale#:~:text=Pickering%20scale%20The%20scale%20developed%20by%20Harvard%20astronomer,and%20a%20rating%20of%2010%20meaning%20perfect%20seeing.). "
+    "Here are some handy definitions for seeing: “Good seeing” is when the stars that are being displayed on your image twinkle very little; “bad seeing” is when they twinkle a lot. "
+    "Check the diagram below to see what this might look like in the Pickerings scale.")
 
 image = Image.open('pickering.png')
 st.image(image, caption='Credit: Damian Peach (http://www.damianpeach.com/pickering.htm)', width=620)
@@ -43,7 +43,7 @@ st.markdown(
 
 g1, g2 = st.columns((1, 0.73))
 image = Image.open('Betelgeuse.png')
-g1.image(image, caption='Astronomical Object: Betelgeuse', width=343)
+g1.image(image, caption='Image Credit: Sunna Withers', width=343)
 
 new_title1 = '<p style="font-family:Courier; color:Orange; font-size: 46px;">FWHM: 3.66</p>'
 new_title2 = '<p style="font-family:Courier; color:Orange; font-size: 46px;">Pickering Scale: 3</p>'
@@ -55,13 +55,21 @@ st.markdown(
     "see below for the data table and a plot showing all my values. As a reminder, the conversion for the Pickering scale was done with this diagram.")
 
 image = Image.open('pickering2.png')
-st.image(image, caption='Credit: Kolář J (https://eaae-astronomy.org/images/projects/catch-a-star/2015/18_How_to_measure_seeing.pdf)', width=620)
+st.image(image,
+         caption='Credit: Kolář J (https://eaae-astronomy.org/images/projects/catch-a-star/2015/18_How_to_measure_seeing.pdf)',
+         width=620)
 
 st.write(data)
 
-a = alt.Chart(dataToDisplay).mark_area(opacity=1).encode(
-    x='Date', y='Pickering Scale')
+scatter  = alt.Chart(dataToDisplay).mark_point(filled=True).encode(
+        alt.X('Date'),
+        alt.Y('Pickering Scale'),
+        alt.Color('Pickering Scale'),
+        alt.Size('Pickering Scale'),
+        alt.OpacityValue(0.8)).interactive()
 
-c = alt.layer(a)
+scatter2 = alt.Chart(dataToDisplay).mark_point().encode(x='Date', y='Pickering Scale').interactive()
+
+c = alt.layer(scatter)
 
 st.altair_chart(c, use_container_width=True)
