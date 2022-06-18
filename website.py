@@ -17,21 +17,6 @@ dataToDisplay = pd.DataFrame(data)
 st.subheader("Project Introduction")
 st.markdown(
     "This website contains my 2022 co-op investigation into how seeing conditions affect day-to-day observations at Allan I. Carswell Astronomical Observatory. One of the measurements I was interested in was the seeing value. 'Why do you want to measure the seeing value?' Well, this interactive application containing FWHM(Full Width Half Maximum) data allows you to look at measured seeing conditions so you can stay informed on the night each observation was taken!")
-st.markdown(
-    "How are seeing and FWHM related? I used the number of pixels across the width of the star at half its maximum value.The question I wanted to answer with my project is 'what kind of seeing do we get at the Allan I Carswell observatory? See below for the data table and a plot showing all my values. As a reminder, the conversion from the FWHM(arcsec) to the Pickering scale was done using this diagram.")
-
-image1 = Image.open('Qatar1.png')
-st.image(image1, caption='Credit: Kolář J (https://eaae-astronomy.org/images/projects/catch-a-star/2015/18_How_to_measure_seeing.pdf)',width=450)
-
-image2 = Image.open('pickering2.png')
-st.image(image2,
-         caption='Credit: Kolář J (https://eaae-astronomy.org/images/projects/catch-a-star/2015/18_How_to_measure_seeing.pdf)',
-         width=720)
-
-
-new_title = '<p style="font-family:Courier; color:Orange; font-size: 42px;">FWHM: 11.379729827499029</p>'
-
-st.markdown(new_title, unsafe_allow_html=True)
 
 st.markdown(
     "For this investigation I used the Pickering scale which is [a scale from 1 to 10 which represents seeing conditions. A rating of 1 is very poor seeing, and a rating of 10 is perfect seeing](https://freestarcharts.com/pickering-scale#:~:text=Pickering%20scale%20The%20scale%20developed%20by%20Harvard%20astronomer,and%20a%20rating%20of%2010%20meaning%20perfect%20seeing.). "
@@ -40,6 +25,19 @@ st.markdown(
 
 image = Image.open('pickering.png')
 st.image(image, caption='Credit: Damian Peach (http://www.damianpeach.com/pickering.htm)', width=620)
+
+st.markdown(
+    "How are seeing and FWHM related? I used the number of pixels across the width of the star at half its maximum value.The question I wanted to answer with my project is 'what kind of seeing do we get at the Allan I Carswell observatory? See below for the data table and a plot showing all my values. As a reminder, the conversion from the FWHM(arcsec) to the Pickering scale was done using this diagram.")
+image1 = Image.open('pickering2.png')
+st.image(image1,
+         caption='Credit: Kolář J (https://eaae-astronomy.org/images/projects/catch-a-star/2015/18_How_to_measure_seeing.pdf)',
+         width=660)
+
+image2 = Image.open('Qatar1.png')
+st.image(image2, width=460)
+
+new_title = '<p style="font-family:Courier; color:Orange; font-size: 42px;">FWHM: 11.379729827499029</p>'
+st.markdown(new_title, unsafe_allow_html=True)
 
 st.subheader("Project Data")
 st.markdown(
