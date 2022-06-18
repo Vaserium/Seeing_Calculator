@@ -22,11 +22,13 @@ st.markdown(
 
 g1, g2 = st.columns((1, 2.5))
 
-image1 = Image.open('Qatar1.png')
-g1.image1(image1, caption='Credit: ', width=450)
+image1 = Image.open('pickering2.png')
+g2.image1(image1,
+         caption='Credit: Kolář J (https://eaae-astronomy.org/images/projects/catch-a-star/2015/18_How_to_measure_seeing.pdf)',
+         width=450)
 
-image = Image.open('pickering2.png')
-g2.image(image,
+image2 = Image.open('pickering2.png')
+g2.image2(image2,
          caption='Credit: Kolář J (https://eaae-astronomy.org/images/projects/catch-a-star/2015/18_How_to_measure_seeing.pdf)',
          width=620)
 
