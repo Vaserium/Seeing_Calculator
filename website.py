@@ -33,10 +33,10 @@ st.image(image1,
          caption='Credit: Kolář J (https://eaae-astronomy.org/images/projects/catch-a-star/2015/18_How_to_measure_seeing.pdf)',
          width=660)
 
-g1, g2 = st.columns((1, 0.23))
+g1, g2 = st.columns((1, 0.75))
 
 image2 = Image.open('Qatar1.png')
-g1.image(image2, width=250)
+g1.image(image2, width=335)
 
 new_title = '<p style="font-family:Courier; color:Orange; font-size: 42px;">FWHM: 11.38</p>'
 g2.markdown(new_title, unsafe_allow_html=True)
