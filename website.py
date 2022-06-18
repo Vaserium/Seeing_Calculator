@@ -22,8 +22,8 @@ st.markdown(
 
 g1, g2 = st.columns((1, 2.5))
 
-image = Image.open('Qatar1.png')
-g1.image(image, caption='Credit: ', width=450)
+image1 = Image.open('Qatar1.png')
+g1.image1(image1, caption='Credit: ', width=450)
 
 image = Image.open('pickering2.png')
 g2.image(image,
