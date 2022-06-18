@@ -38,7 +38,7 @@ g1, g2 = st.columns((1, 0.75))
 image2 = Image.open('Qatar1.png')
 g1.image(image2, width=345)
 
-new_title = '<p style="font-family:Courier; color:Orange; font-size: 23px;">FWHM:(px) 11.3797298</p>'
+new_title = '<p style="font-family:Courier; color:Orange; font-size: 23px;">FWHM(px) = 11.3797298</p>'
 new_title2 = '<p style="font-family:Courier; color:Orange; font-size: 23px;">FWHM(arcsec) = FWHM*0.0439(const) = 0.5 arcsec</p>'
 g2.markdown(new_title, unsafe_allow_html=True)
 g2.markdown(new_title2, unsafe_allow_html=True)
