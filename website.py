@@ -38,7 +38,7 @@ g1, g2 = st.columns((1, 0.75))
 image2 = Image.open('Qatar1.png')
 g1.image(image2, width=335)
 
-new_title = '<p style="font-family:Courier; color:Orange; font-size: 42px;">FWHM: 11.38</p>'
+new_title = '<p style="font-family:Courier; color:Orange; font-size: 40px;">FWHM: 11.38</p>'
 g2.markdown(new_title, unsafe_allow_html=True)
 
 st.subheader("Project Data")
