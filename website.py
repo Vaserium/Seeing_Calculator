@@ -20,15 +20,13 @@ st.markdown(
 st.markdown(
     "How are seeing and FWHM related? I used the number of pixels across the width of the star at half its maximum value.The question I wanted to answer with my project is 'what kind of seeing do we get at the Allan I Carswell observatory? See below for the data table and a plot showing all my values. As a reminder, the conversion from the FWHM(arcsec) to the Pickering scale was done using this diagram.")
 
-g1, g2 = st.columns((1, 2.5))
-
 image1 = Image.open('Qatar1.png')
-g1.image(image1, caption='Credit: Kolář J (https://eaae-astronomy.org/images/projects/catch-a-star/2015/18_How_to_measure_seeing.pdf)',width=450)
+st.image(image1, caption='Credit: Kolář J (https://eaae-astronomy.org/images/projects/catch-a-star/2015/18_How_to_measure_seeing.pdf)',width=450)
 
 image2 = Image.open('pickering2.png')
-g2.image(image2,
+st.image(image2,
          caption='Credit: Kolář J (https://eaae-astronomy.org/images/projects/catch-a-star/2015/18_How_to_measure_seeing.pdf)',
-         width=620)
+         width=720)
 
 
 new_title = '<p style="font-family:Courier; color:Orange; font-size: 42px;">FWHM: 11.379729827499029</p>'
