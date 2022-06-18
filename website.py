@@ -27,17 +27,19 @@ image = Image.open('pickering.png')
 st.image(image, caption='Credit: Damian Peach (http://www.damianpeach.com/pickering.htm)', width=620)
 
 st.markdown(
-    "How are seeing and FWHM related? I used the number of pixels across the width of the star at half its maximum value.The question I wanted to answer with my project is 'what kind of seeing do we get at the Allan I Carswell observatory? See below for the data table and a plot showing all my values. As a reminder, the conversion from the FWHM(arcsec) to the Pickering scale was done using this diagram.")
+    "How are seeing and FWHM related? I used the number of pixels across the width of the star at half its maximum value. The question I wanted to answer with my project is 'what kind of seeing do we get at the Allan I Carswell observatory? See below for the data table and a plot showing all my values. As a reminder, the conversion from the FWHM(arcsec) to the Pickering scale was done using this diagram.")
 image1 = Image.open('pickering2.png')
 st.image(image1,
          caption='Credit: Kolář J (https://eaae-astronomy.org/images/projects/catch-a-star/2015/18_How_to_measure_seeing.pdf)',
          width=660)
 
-image2 = Image.open('Qatar1.png')
-st.image(image2, width=460)
+g1, g2 = st.columns((1, 0.23))
 
-new_title = '<p style="font-family:Courier; color:Orange; font-size: 42px;">FWHM: 11.379729827499029</p>'
-st.markdown(new_title, unsafe_allow_html=True)
+image2 = Image.open('Qatar1.png')
+g1.image(image2, width=250)
+
+new_title = '<p style="font-family:Courier; color:Orange; font-size: 42px;">FWHM: 11.38</p>'
+g2.markdown(new_title, unsafe_allow_html=True)
 
 st.subheader("Project Data")
 st.markdown(
